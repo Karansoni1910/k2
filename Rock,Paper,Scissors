@@ -1,0 +1,19 @@
+rounds=int(input("How many rounds would you like to play? "))
+import random
+moves=['rock','paper','scissor']
+p_score=0
+c_score=0
+for i in range(rounds):
+    n=input("Pick one...(Rock/Paper/Scissor): ").lower()
+    print(f"Player: {p_score}\t Computer: {c_score}")
+    c=random.randint(1,3)
+    ccc=moves[c-1]
+    if n==ccc:
+        print(f"computer: {ccc} \t you: {n} It's a tie.")
+    elif n!=ccc:
+        if (n=='rock' and ccc=='scissor') or (n=='scissor'and ccc=='paper') or (n=='paper'and ccc=='rock'):
+            p_score+=1
+            print(f"computer: {ccc} \t you: {n} \n You won :-)")  
+        if (ccc=='rock' and n=='scissor') or (ccc=='scissor'and n=='paper') or (ccc=='paper'and n=='rock'):
+            c_score+=1
+            print(f"computer: {ccc} \t you: {n} \n You Lost :-(")
